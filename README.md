@@ -8,6 +8,19 @@ The localStorage Web API serves as a persistent storage mechanism within web bro
 However, it's crucial to exercise caution with localStorage due to its accessibility via JavaScript, as any script running on the same domain can access this stored data. Consequently, sensitive information like passwords or confidential user data should not be stored using localStorage. The Same-Origin Policy restricts access to localStorage from different domains, ensuring security within the bounds of a single website but necessitating diligence in handling potentially sensitive information to mitigate any potential risks.
 
 
+
+
+Definition if type for Item to be saved locally
+```ts
+export type ItemType = {
+  name: String;
+  value: String ;
+};
+
+export type ItemArray = ItemType[];
+
+```
+
 ```js
 const Home = () => {
   const [items, setItems] = useState([] as ItemArray);
